@@ -1,4 +1,4 @@
-import python-vlc
+import vlc
 
 class _media_player():
     

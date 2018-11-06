@@ -77,10 +77,10 @@ def process_event(assistant, event):
         elif text == 'ip address':
             assistant.stop_conversation()
             say_ip()
-        elif any(media) in text:
+        elif any((words in text for words in media)) in text:
             assistant.stop_conversation()
-            mediaPlayer=_media_player(text)
-            
+            mediaPlayer=_drivers._media_player._media_player(text)
+            mediaPlayer.play()
 
     elif event.type == EventType.ON_END_OF_UTTERANCE:
         status_ui.status('thinking')
@@ -107,19 +107,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-    © 2018 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-Press h to open a hovercard with more details.
