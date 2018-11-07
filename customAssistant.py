@@ -77,7 +77,7 @@ def process_event(assistant, event):
         elif text == 'ip address':
             assistant.stop_conversation()
             say_ip()
-        elif any((words in text for words in media)) in text:
+        elif any((words in text for words in media)):
             assistant.stop_conversation()
             mediaPlayer=_drivers._media_player._media_player(text)
             mediaPlayer.play()
